@@ -1,0 +1,80 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@300&display=swap');
+
+#root{
+  /* background-color: #DDDCE4; */
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+
+  background-image: url('./assets/mobileBack.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+@media only screen and (min-width: 1024px) {
+  #root{
+    background-image: url('./assets/desktopBack.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+} 
+
+/* FONTS */
+
+.mainBanner div p{
+  font-family: 'Nunito', sans-serif;
+}
+
+.mainBanner div h1{
+  font-family: 'Nunito', sans-serif;
+}
+
+
+/* CUSTOM TABLE STYLES */
+
+/* STACK TABLE ON SMALL SCREENS */
+
+@media only screen and (max-width: 768px) {
+  .mainTable td{
+    display:block;
+  }
+
+}
+
+.mainTable td:first-child{
+  border-bottom-left-radius: 4px;
+}
+
+.mainTable td:last-child{
+  border-bottom-right-radius: 4px;
+}
+
+
+
+/* FOOTER */
+
+footer{
+  background-image: url('./assets/dekstopFooter.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+footer h1{
+  font-family: 'Nunito', sans-serif;
+}
+
+/* NAVIGATION */
+
+
+.navBar div a:hover{
+
+  border-bottom:1px solid #9c91e4;
+
+}
