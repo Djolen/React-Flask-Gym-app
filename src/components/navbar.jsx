@@ -33,9 +33,9 @@ const Navbar = () => {
             </div>
 
             <div className={!nav ? 'hidden' : 'absolute bg-[#F8F8FC] block w-full p-3 mb-14 '}>
-                <a href='/#' className='hover:text-[#9c91e4] transition duration-200 border-b-2 border-zinc-200 block '> HOME</a>
-                <a href='/#' className='hover:text-[#9c91e4] transition duration-200 border-b-2 border-zinc-200 block '> BUY PRODUCTS</a>
-                <a href='/#' className='hover:text-[#9c91e4] transition duration-200 border-b-2 border-zinc-200 block '> CONTACT US</a>
+                <Link to='/' className='hover:text-[#9c91e4] transition duration-200 border-b-2 border-zinc-200 block '> HOME</Link>
+                <Link to='/PRODUCTS' className='hover:text-[#9c91e4] transition duration-200 border-b-2 border-zinc-200 block '> BUY PRODUCTS</Link>
+                <Link to='/#' className='hover:text-[#9c91e4] transition duration-200 border-b-2 border-zinc-200 block '> CONTACT US</Link>
             </div>
 
         </div>
