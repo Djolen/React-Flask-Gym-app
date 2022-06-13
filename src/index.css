@@ -36,6 +36,10 @@
   font-family: 'Nunito', sans-serif;
 }
 
+.productsOrder form label{
+  font-family: 'Nunito', sans-serif;
+}
+
 
 /* CUSTOM TABLE STYLES */
 
@@ -76,5 +80,19 @@ footer h1{
 .navBar div a:hover{
 
   border-bottom:1px solid #9c91e4;
+
+}
+
+
+/* FORM */
+
+
+@media only screen and (min-width: 1024px) {
+  
+  .productsOrder form {
+    background-image: url('./assets/bbSil.png');
+    background-repeat: no-repeat;
+    background-position: center;
+  }
 
 }

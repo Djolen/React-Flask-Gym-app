@@ -2,6 +2,7 @@ import React from 'react';
 import logo from '../assets/logo.png'
 import { useState } from 'react';
 import { MenuIcon, XIcon } from '@heroicons/react/outline'
+import { Link } from 'react-router-dom'
 
 const Navbar = () => {
 
@@ -22,9 +23,9 @@ const Navbar = () => {
                 </div>
 
                 <div className='hidden space-x-6 mr-6 md:flex'>
-                    <a href='/#' className='hover:text-[#9c91e4] transition duration-200'> HOME</a>
-                    <a href='/#' className='hover:text-[#9c91e4] transition duration-200'> BUY PRODUCTS</a>
-                    <a href='/#' className='hover:text-[#9c91e4] transition duration-200'> CONTACT US</a>
+                    <Link to='/' className='hover:text-[#9c91e4] transition duration-200'> HOME</Link>
+                    <Link to='/PRODUCTS' className='hover:text-[#9c91e4] transition duration-200'> BUY PRODUCTS</Link>
+                    <Link to='/#' className='hover:text-[#9c91e4] transition duration-200'> CONTACT US</Link>
                 </div>
 
                 {!nav ? <MenuIcon onClick={handleClick} className='w-8 sm:w-12 md:hidden'></MenuIcon> :   <XIcon onClick={handleClick} className='w-8 sm:w-12 md:hidden'></XIcon>}
