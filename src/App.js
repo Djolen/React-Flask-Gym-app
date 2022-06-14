@@ -5,6 +5,7 @@ import Footer from "./components/Footer";
 import ProductPage from "./components/ProductPage";
 
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import ContactPage from "./components/ContactPage";
 
 
 function App() {
@@ -14,6 +15,7 @@ function App() {
       <Routes>
         <Route path="/" element={<> <MainCard/> <Banner/> </>} />
         <Route path="/PRODUCTS" element={<> <ProductPage/>  </>} />
+        <Route path="/CONTACTUS" element={<> <ContactPage/>  </>} />
       </Routes>
       <Footer/>
     </Router>

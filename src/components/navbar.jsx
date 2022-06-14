@@ -25,7 +25,7 @@ const Navbar = () => {
                 <div className='hidden space-x-6 mr-6 md:flex'>
                     <Link to='/' className='hover:text-[#9c91e4] transition duration-200'> HOME</Link>
                     <Link to='/PRODUCTS' className='hover:text-[#9c91e4] transition duration-200'> BUY PRODUCTS</Link>
-                    <Link to='/#' className='hover:text-[#9c91e4] transition duration-200'> CONTACT US</Link>
+                    <Link to='/CONTACTUS' className='hover:text-[#9c91e4] transition duration-200'> CONTACT US</Link>
                 </div>
 
                 {!nav ? <MenuIcon onClick={handleClick} className='w-8 sm:w-12 md:hidden'></MenuIcon> :   <XIcon onClick={handleClick} className='w-8 sm:w-12 md:hidden'></XIcon>}
@@ -35,7 +35,7 @@ const Navbar = () => {
             <div className={!nav ? 'hidden' : 'absolute bg-[#F8F8FC] block w-full p-3 mb-14 '}>
                 <Link to='/' className='hover:text-[#9c91e4] transition duration-200 border-b-2 border-zinc-200 block '> HOME</Link>
                 <Link to='/PRODUCTS' className='hover:text-[#9c91e4] transition duration-200 border-b-2 border-zinc-200 block '> BUY PRODUCTS</Link>
-                <Link to='/#' className='hover:text-[#9c91e4] transition duration-200 border-b-2 border-zinc-200 block '> CONTACT US</Link>
+                <Link to='/CONTACTUS' className='hover:text-[#9c91e4] transition duration-200 border-b-2 border-zinc-200 block '> CONTACT US</Link>
             </div>
 
         </div>
