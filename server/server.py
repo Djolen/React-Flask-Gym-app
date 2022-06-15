@@ -1,26 +1,44 @@
 
-from flask import Flask 
-from flaskext.mysql import MySQL
+from flask import Flask, request
+import pymysql
+from flask_cors import CORS, cross_origin
+
+
+
+def convertBool(num):
+    if num == True: 
+        return "1" 
+    else: 
+        return "0" 
 
 app = Flask(__name__)
+CORS(app)
+db = pymysql.connect(host = "localhost",user = "root", password="", database="test")
 
-db = MySQL()
-
-
-@app.route("/orders")
+@app.route("/orders", methods = ['POST'])
 def orders():
-    return {"orders": ["order1", "order2"]} 
+    order = request.get_json()
 
-app.config['MYSQL_DATABASE_USER'] = 'root'
-app.config['MYSQL_DATABASE_PASSWORD'] = ''
-app.config['MYSQL_DATABASE_DB'] = 'test'
-app.config['MYSQL_DATABASE_HOST'] = 'localhost'
+    name = order['name']
+    surname = order['surname']
+    age = order['age']
+    weight = order['weight']
+    dp = order['dietplan']
+    dp = convertBool(dp)
+    tp = order['trainingplan']
+    tp = convertBool(tp)
+    con = order['consul']
+    con = convertBool(con)
 
-db.init_app(app) 
+    cursor = db.cursor() 
+    sql = """INSERT INTO orders(name,
+            surname, age, weight, dietplan, trainingplan,consultationplan)
+            VALUES (%s,%s,%s,%s,%s,%s,%s)""" 
+    var = (name,surname,age,weight,dp,tp,con)
+    cursor.execute(sql,var)
+    db.commit()
 
-conn = db.connect() 
-cursor = conn.cursor() 
-
+    return order
 
 
 if __name__ == "__main__": 

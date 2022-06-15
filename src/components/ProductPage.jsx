@@ -2,6 +2,7 @@ import React, { useRef} from 'react'
 import axios from 'axios'
 
 
+
 const ProductPage = () => {
 
 
@@ -29,10 +30,11 @@ const ProductPage = () => {
             surname:surname,
             age:age, 
             weight:weight, 
-            dieplan:dietplan, 
+            dietplan:dietplan, 
             trainingplan:trainingplan, 
             consul:consul,
         }).then(()=>{
+
             alert("You have succesfuly applied for our program. Our team will get in touch with you soon.");
         })
     }
