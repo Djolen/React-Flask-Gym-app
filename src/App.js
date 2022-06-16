@@ -3,9 +3,11 @@ import Navbar from "./components/navbar";
 import Banner from "./components/Banner";
 import Footer from "./components/Footer";
 import ProductPage from "./components/ProductPage";
+import ContactPage from "./components/ContactPage";
+import OrdersView from "./components/OrdersView";
 
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import ContactPage from "./components/ContactPage";
+
 
 
 function App() {
@@ -16,6 +18,7 @@ function App() {
         <Route path="/" element={<> <MainCard/> <Banner/> </>} />
         <Route path="/PRODUCTS" element={<> <ProductPage/>  </>} />
         <Route path="/CONTACTUS" element={<> <ContactPage/>  </>} />
+        <Route path="/VIEWORDERS" element={ <OrdersView/> } />
       </Routes>
       <Footer/>
     </Router>

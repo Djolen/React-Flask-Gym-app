@@ -1,7 +1,9 @@
 
+from colorama import Cursor
 from flask import Flask, request
 import pymysql
-from flask_cors import CORS, cross_origin
+from flask_cors import CORS
+from json import dumps
 
 
 
@@ -39,6 +41,15 @@ def orders():
     db.commit()
 
     return order
+
+@app.route("/recieveorders")
+def recieveorders():
+    cursor = db.cursor() 
+    sql = "select * from orders "
+
+    cursor.execute(sql)
+    result = cursor.fetchall()
+    return dumps(result)
 
 
 if __name__ == "__main__": 
