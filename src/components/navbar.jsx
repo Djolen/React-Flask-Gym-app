@@ -18,8 +18,8 @@ const Navbar = () => {
 
                 <img src={logo}  className='max-h-full' alt='logoImage'></img>
 
-                <div className='hidden font-bold lg:flex'>
-                    <h1 className='text-4xl'>GYM BUDDIES</h1>
+                <div className='hidden lg:flex'>
+                    <h1 className='text-6xl font-bold'>GYM BUDDIES</h1>
                 </div>
 
                 <div className='hidden space-x-6 mr-6 md:flex'>

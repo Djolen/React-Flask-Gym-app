@@ -33,6 +33,10 @@ body{
 
 /* FONTS */
 
+.navBar div h1{
+  font-family: 'Nunito', sans-serif;
+}
+
 .mainBanner div p{
   font-family: 'Nunito', sans-serif;
 }
@@ -45,6 +49,9 @@ body{
   font-family: 'Nunito', sans-serif;
 }
 
+.contactPage div h1{
+  font-family: 'Nunito', sans-serif;
+}
 
 /* CUSTOM TABLE STYLES */
 
@@ -110,3 +117,14 @@ footer h1{
   transition: 0.8s ease-out;
 }
 
+
+/* CONTACT PAGE ICON ANIMATION */ 
+
+.contactPage div div a img{
+  transition: 0.3s ease-out;
+}
+
+.contactPage div div a img:hover{
+  transform: translateY(-50%);
+  opacity: 70%;
+}

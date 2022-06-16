@@ -5,7 +5,7 @@ import consultation from '../assets/consultationIcon.png'
 
 const Banner = () => {
   return (
-    <div className='mainBanner flex flex-col items-center justify-between px-6 py-6 bg-[#6b9ae0] w-full min-h-[300px] drop-shadow-lg opacity-[70%] md:flex-row md:py-0'>
+    <div className='mainBanner flex flex-col items-center justify-between px-6 py-6 bg-[#6b9ae0]/[.70] w-full min-h-[300px] drop-shadow-lg md:flex-row md:py-0'>
         
         {/* FIRST CARD */}
         <div className='flex my-12 mx-6 p-6 flex-col max-h-full rounded-lg bg-[#437694] items-center'>

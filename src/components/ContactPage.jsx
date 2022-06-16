@@ -6,7 +6,7 @@ import ttPic from '../assets/logo-tiktok.svg'
 
 const ContactPage = () => {
   return (
-    <div className='min-h-[100vh] container mx-auto relative flex'>
+    <div className='contactPage min-h-[100vh] container mx-auto relative flex'>
         <div className="container mx-auto bg-white/[.75] flex flex-col max-w-[50%] max-h-[482px] p-8 my-11">
 
             <h1 className='my-4 md:text-xl md:font-bold '>
@@ -32,7 +32,7 @@ const ContactPage = () => {
                 </h2>
             </div>
 
-            <div className="flex flex-col items-center justify-center">
+            <div className="flex flex-col items-center justify-between min-h-[50%]">
                 <h1 className='mb-4 md:text-4xl md:font-bold '> OUR SOCIAL MEDIA:</h1>
                
                 <div className='flex flex-col items-center md:flex-row'>
