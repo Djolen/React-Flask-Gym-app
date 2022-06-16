@@ -18,15 +18,10 @@
 
 }
 
-body{
-  font-family: 'Nunito', sans-serif; 
-}
-
 @media only screen and (min-width: 1024px) {
   #root{
     background-image: url('./assets/desktopBack.jpg');
-    background-repeat: no-repeat;
-    background-size: cover;
+
   }
 
 } 
