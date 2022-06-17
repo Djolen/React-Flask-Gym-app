@@ -1,5 +1,4 @@
 
-from colorama import Cursor
 from flask import Flask, request
 import pymysql
 from flask_cors import CORS

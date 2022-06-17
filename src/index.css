@@ -106,9 +106,9 @@ footer h1{
 
 
 /* DELETE BUTTON */ 
-.deleteButton:hover{
+.viewButton:hover{
   cursor: pointer; 
-  background: rgb(255, 255, 255, 0.8);
+  background: rgb(255, 255, 255, 0.7);
   transition: 0.8s ease-out;
 }
 
