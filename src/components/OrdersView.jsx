@@ -26,7 +26,8 @@ const OrdersView = () => {
                     <p className='text-4xl text-bold p-6 bg-white ' key={i + (Math.random() * 5000)} > {order[5]} </p> 
                     <p className='text-4xl text-bold p-6 bg-slate-600 ' key={i + (Math.random() * 5000)} > {order[6]} </p> 
                     <p className='text-4xl text-bold p-6 bg-white ' key={i + (Math.random() * 5000)} > {order[7]} </p>
-                    <p className='deleteButton text-4xl text-bold p-6 bg-white text-red-600' key={i + (Math.random() * 5000)} > DELETE </p> 
+                    <p className='viewButton text-4xl text-bold p-6 bg-white text-teal-700' > CONTACT </p>
+                    <p className='viewButton text-4xl text-bold p-6 bg-white text-red-600'  > DELETE </p> 
                         </div>
             })}
         </div>
