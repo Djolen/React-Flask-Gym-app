@@ -12,14 +12,16 @@ def convertBool(num):
     else: 
         return "0" 
 
-app = Flask(__name__)
-CORS(app)
-db = pymysql.connect(host = "localhost",user = "root", password="", database="test")
+app = Flask(__name__) #ENABLING FLASK
+CORS(app) #ENABLING CORS
+db = pymysql.connect(host = "localhost",user = "root", password="", database="test") #DB CONNECTION
 
 ### INSERTING ORDER FROM FRONTEND
 
 @app.route("/orders", methods = ['POST'])
 def orders():
+
+    #GETTING DATA FROM FRONTEND
     order = request.get_json()
 
     name = order['name']
@@ -33,13 +35,16 @@ def orders():
     con = order['consul']
     con = convertBool(con)
 
-    cursor = db.cursor() 
-    sql = """INSERT INTO orders(name,
-            surname, age, weight, dietplan, trainingplan,consultationplan)
-            VALUES (%s,%s,%s,%s,%s,%s,%s)""" 
-    var = (name,surname,age,weight,dp,tp,con)
-    cursor.execute(sql,var)
-    db.commit()
+    try:
+        cursor = db.cursor() 
+        sql = """INSERT INTO orders(name,
+                surname, age, weight, dietplan, trainingplan,consultationplan)
+                VALUES (%s,%s,%s,%s,%s,%s,%s)""" 
+        var = (name,surname,age,weight,dp,tp,con)
+        cursor.execute(sql,var)
+        db.commit()
+    except: 
+        return "Error: unable to insert data"
 
     return order
 
@@ -47,10 +52,15 @@ def orders():
 
 @app.route("/recieveorders")
 def recieveorders():
+
     cursor = db.cursor() 
-    sql = "select * from orders "
-    cursor.execute(sql)
-    result = cursor.fetchall()
+    sql = "select * from orders"
+
+    try:
+        cursor.execute(sql)
+        result = cursor.fetchall()
+    except: 
+        return "Error: unable to send data"
 
     return dumps(result)
 
@@ -60,17 +70,18 @@ def recieveorders():
 @app.route("/getcontact", methods = ['POST'])
 def getcontacts(): 
     
+    #RECIEVING ID FROM FRONTEND
     dataid = request.get_json()
-    #print(dataid)
 
     cursor = db.cursor() 
-    #print("dataid:", dataid['datakey'])
     sql = "select contact from test.orders where id = '%d' " % (dataid['datakey'])
-    cursor.execute(sql)
-    
-    result = cursor.fetchall()
 
-    #print("result: ", result)
+    try:
+        cursor.execute(sql)
+        result = cursor.fetchall()
+    except: 
+        return "Error: unable to fetch data"
+
 
     return dumps(result) 
 
@@ -80,14 +91,17 @@ def getcontacts():
 @app.route("/deleteorder", methods = ['POST'])
 def deleteorder(): 
 
+    #RECIEVING ID FROM FRONTEND
     dataid = request.get_json()
 
     cursor = db.cursor()
-
-    #sql = "select contact from test.orders where id = '%d' " % (dataid['datakey'])
     sql = "delete from test.orders where id = '%d' " % (dataid['datakey'])
-    cursor.execute(sql)
-    db.commit()
+    
+    try:
+        cursor.execute(sql)
+        db.commit()
+    except: 
+        return "Error: unable to delete data"
 
     return "SUCCESSFULLY REMOVED CANDIDATE"
 
