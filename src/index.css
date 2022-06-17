@@ -75,6 +75,8 @@ footer{
   background-image: url('./assets/dekstopFooter.jpg');
   background-repeat: no-repeat;
   background-size: cover;
+
+  border-top: 1px solid rgb(0,0,0,0.75);
 }
 
 footer h1{
