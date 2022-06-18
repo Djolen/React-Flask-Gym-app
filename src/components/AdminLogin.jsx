@@ -26,7 +26,7 @@ const AdminLogin = () => {
 
     const handleLogin = async() => {
         try{
-            const user = await signInWithEmailAndPassword(
+            await signInWithEmailAndPassword(
                 auth,
                 loginEmail,
                 loginPassword
@@ -48,11 +48,11 @@ const AdminLogin = () => {
         !user && 
         <div className='container mx-auto flex  items-center justify-center min-h-[100vh]'>
 
-            <div className='container mx-auto flex flex-col items-center justify-end'>
+            <div className='loginForm container mx-auto flex flex-col items-center justify-end'>
                 <h3 className='text-xl font-bold my-3'> You are admin ? Login here</h3>
                 <input onChange={(e)=>{setLoginEmail(e.target.value)}} className='m-3 p-6' type="text" placeholder='email...'  />
                 <input onChange={(e)=>{setLoginPassword(e.target.value) }} className='m-3 p-6' type="password" placeholder='password...' />
-                <button onClick={handleLogin} className='bg-white p-6 mb-6'> Login</button>
+                <button onClick={handleLogin} className='bg-white'> Login</button>
             </div>
 
         </div>

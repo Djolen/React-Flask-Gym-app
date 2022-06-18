@@ -11,7 +11,6 @@ const OrdersView = (props) => {
         ).then(
             data => {
                 setData(data)
-                console.log(data)
             }
         )
     },[])
@@ -66,7 +65,7 @@ const OrdersView = (props) => {
                             </div>
                 })}
                 </div>
-                <button onClick={props.logoutFunction} >Hello</button>
+                <button className='logoutButton bg-white' onClick={props.logoutFunction} > Logout </button>
             </div>
 
     )

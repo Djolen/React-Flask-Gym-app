@@ -93,7 +93,7 @@ footer h1{
 }
 
 
-/* FORM */
+/* BUY PRODUCTS FORM */
 
 
 @media only screen and (min-width: 1024px) {
@@ -144,4 +144,38 @@ footer h1{
 .planSection:hover{
   opacity: 80%;
   transform: translateY(-20%);
+}
+
+/* LOGOUT BUTTON  ON VIEWORDERS */
+
+.logoutButton{
+  font-family: 'Nunito', sans-serif;
+  margin: 12px; 
+  padding: 12px; 
+  width: 264px;
+  font-weight: bold;
+}
+
+.logoutButton:hover{
+  opacity: 80%;
+}
+
+
+
+/* LOGIN FORM */
+
+.loginForm h3{
+  font-family: 'Nunito', sans-serif;
+}
+
+.loginForm button{
+  font-family: 'Nunito', sans-serif;
+  margin: 12px; 
+  padding: 12px; 
+  width: 164px;
+  font-weight: bold;
+}
+
+.loginForm button:hover{
+  opacity: 80%;
 }
