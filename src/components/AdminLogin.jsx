@@ -1,0 +1,73 @@
+import React, { useState, useEffect } from 'react'
+import {
+    signInWithEmailAndPassword,
+    onAuthStateChanged,
+    signOut
+} from 'firebase/auth'
+
+import { auth } from '../firebase-config';
+import OrdersView from './OrdersView' 
+
+const AdminLogin = () => {
+
+    const [loginEmail, setLoginEmail] = useState("");
+
+    const [loginPassword, setLoginPassword] = useState("");
+
+    const [user, setUser] = useState({});
+
+    useEffect(() => {
+        onAuthStateChanged(auth, (currentUser) => {
+            setUser(currentUser);
+        });
+    
+    }, [])
+
+
+    const handleLogin = async() => {
+        try{
+            const user = await signInWithEmailAndPassword(
+                auth,
+                loginEmail,
+                loginPassword
+            );
+        }
+        catch(err){
+            alert(err)
+        }
+        
+    }
+
+    const handleLogout = async () =>{
+        await signOut(auth)
+    }
+
+    return (
+        <>
+        {
+        !user && 
+        <div className='container mx-auto flex  items-center justify-center min-h-[100vh]'>
+
+            <div className='container mx-auto flex flex-col items-center justify-end'>
+                <h3 className='text-xl font-bold my-3'> You are admin ? Login here</h3>
+                <input onChange={(e)=>{setLoginEmail(e.target.value)}} className='m-3 p-6' type="text" placeholder='email...'  />
+                <input onChange={(e)=>{setLoginPassword(e.target.value) }} className='m-3 p-6' type="password" placeholder='password...' />
+                <button onClick={handleLogin} className='bg-white p-6 mb-6'> Login</button>
+            </div>
+
+        </div>
+        }
+        {
+        user &&
+            <>
+                <div className='flex flex-col justify-center items-center my-6' >
+                    <p className='text-md font-bold'> Logged in as: {user.email} </p>
+                    <OrdersView logoutFunction = {handleLogout}/>
+                </div>
+            </>
+        }
+        </>
+    )
+}
+
+export default AdminLogin

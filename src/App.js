@@ -9,6 +9,7 @@ import OptionSection from "./components/OptionSection";
 
 
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import AdminLogin from "./components/AdminLogin";
 
 
 
@@ -21,6 +22,7 @@ function App() {
         <Route path="/" element={<> <MainCard/> <OptionSection/> <Banner/> </>} />
         <Route path="/PRODUCTS" element={<> <ProductPage/>  </>} />
         <Route path="/CONTACTUS" element={<> <ContactPage/>  </>} />
+        <Route path="/adminadmin" element={ <AdminLogin/> } />
         <Route path="/VIEWORDERS" element={ <OrdersView/> } />
       </Routes>
       <Footer/>

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import axios from 'axios'
 
-const OrdersView = () => {
+const OrdersView = (props) => {
 
     const [data, setData] = useState([])
 
@@ -66,6 +66,7 @@ const OrdersView = () => {
                             </div>
                 })}
                 </div>
+                <button onClick={props.logoutFunction} >Hello</button>
             </div>
 
     )
