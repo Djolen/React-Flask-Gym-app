@@ -1,0 +1,30 @@
+{
+  "files": {
+    "main.css": "/React-Flask-Gym-app/static/css/main.d3297310.css",
+    "main.js": "/React-Flask-Gym-app/static/js/main.f4204949.js",
+    "static/js/787.24403464.chunk.js": "/React-Flask-Gym-app/static/js/787.24403464.chunk.js",
+    "static/media/cucanj.mp4": "/React-Flask-Gym-app/static/media/cucanj.391f33cf99e6f1d93f80.mp4",
+    "static/media/desktopBack.jpg": "/React-Flask-Gym-app/static/media/desktopBack.74cd97e7f14cabb6d177.jpg",
+    "static/media/dekstopFooter.jpg": "/React-Flask-Gym-app/static/media/dekstopFooter.03d73905a3cbad864a32.jpg",
+    "static/media/img4.jpg": "/React-Flask-Gym-app/static/media/img4.73d4a0289682c0c08d1a.jpg",
+    "static/media/logo.png": "/React-Flask-Gym-app/static/media/logo.9ede47ac6a394ec96bb7.png",
+    "static/media/pizzaIcon.png": "/React-Flask-Gym-app/static/media/pizzaIcon.67841e2fde3297201a0c.png",
+    "static/media/img1.jpeg": "/React-Flask-Gym-app/static/media/img1.c8cdedadc61a31aa1458.jpeg",
+    "static/media/img2.jpg": "/React-Flask-Gym-app/static/media/img2.ccecd252a8ba182497cc.jpg",
+    "static/media/img3.jpg": "/React-Flask-Gym-app/static/media/img3.708188c24892e7c96eb0.jpg",
+    "static/media/mobileBack.jpg": "/React-Flask-Gym-app/static/media/mobileBack.66db07ebad41fa827f9d.jpg",
+    "static/media/consultationIcon.png": "/React-Flask-Gym-app/static/media/consultationIcon.a7d31b6baa65c81619d9.png",
+    "static/media/instagramIcon.png": "/React-Flask-Gym-app/static/media/instagramIcon.d9750519f2b802834aac.png",
+    "static/media/bbSil.png": "/React-Flask-Gym-app/static/media/bbSil.e918ab3356f62bb9d9ad.png",
+    "static/media/fbIcon.png": "/React-Flask-Gym-app/static/media/fbIcon.c3f3da436f4635b0c8e1.png",
+    "static/media/logo-tiktok.svg": "/React-Flask-Gym-app/static/media/logo-tiktok.b483c97fbcb021da3f6c478129168ee7.svg",
+    "index.html": "/React-Flask-Gym-app/index.html",
+    "main.d3297310.css.map": "/React-Flask-Gym-app/static/css/main.d3297310.css.map",
+    "main.f4204949.js.map": "/React-Flask-Gym-app/static/js/main.f4204949.js.map",
+    "787.24403464.chunk.js.map": "/React-Flask-Gym-app/static/js/787.24403464.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.d3297310.css",
+    "static/js/main.f4204949.js"
+  ]
+}
