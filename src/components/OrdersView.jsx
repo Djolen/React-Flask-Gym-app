@@ -6,14 +6,15 @@ const OrdersView = (props) => {
     const [data, setData] = useState([])
 
     useEffect(()=>{
+        if(props.loginCheck === true){      
         fetch("/recieveorders").then(
             res => res.json()
         ).then(
             data => {
                 setData(data)
             }
-        )
-    },[])
+        )}
+    },[props.loginCheck])
 
     const handleContact = (datakey) =>{
 
@@ -34,7 +35,7 @@ const OrdersView = (props) => {
             window.location.reload();
         })
     }
-
+    if(props.loginCheck === true){
     return (
         <div className='container mx-auto my-6 pt-6 relative min-h-[100vh] flex flex-col items-center '>
 
@@ -68,6 +69,11 @@ const OrdersView = (props) => {
                 <button className='logoutButton bg-white' onClick={props.logoutFunction} > Logout </button>
             </div>
 
+    )}
+    else return(
+        <div className='flex items-center justify-center min-h-[100vh]'>
+             <h1 className='text-4xl font-bold'> Loading ... </h1>
+        </div>
     )
 }
 

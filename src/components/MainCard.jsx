@@ -1,26 +1,41 @@
 import React from 'react'
 import cucanj from '../assets/cucanj.mp4'
-import slika1 from '../assets/img1.jpg'
+import slika1 from '../assets/img1.jpeg'
 import slika2 from '../assets/img2.jpg'
+import slika3 from '../assets/img3.jpg'
+import slika4 from '../assets/img4.jpg'
 import { useState, useRef } from 'react'
 
 
 
 const MainCard = () => {
 
+    const [picOne, setPicOne] = useState(true)
+    const [picTwo, setPicTwo] = useState(false)
+    const [picThree, setPicThree] = useState(false)
+    const [picFour, setPicFour] = useState(false)
+
     const picture = useRef()
 
-    const [picOne, setPicOne] = useState(true)
-
     const handleClick = () => {
-       setPicOne(true)
-       picture.current.src = slika1
+        picture.current.src = slika1
+        setPicOne(true); setPicTwo(false); setPicThree(false); setPicFour(false);
     }
 
     const handleClickTwo = () => {
-        setPicOne(false)
         picture.current.src = slika2
-     }
+        setPicOne(false); setPicTwo(true); setPicThree(false); setPicFour(false);
+    }
+
+    const handleClickThree = () => {
+        picture.current.src = slika3
+        setPicOne(false); setPicTwo(false); setPicThree(true); setPicFour(false);
+    }
+
+    const handleClickFour = () => {
+        picture.current.src = slika4
+        setPicOne(false); setPicTwo(false); setPicThree(false); setPicFour(true);
+    }
 
 
   return (
@@ -51,7 +66,6 @@ const MainCard = () => {
                     You'll look stronger, too.
                 </p>
             </div>
-
         </div>
 
         {/* BOTTOM TEXT */} 
@@ -71,27 +85,15 @@ const MainCard = () => {
         {/* CARAUSEL */}
 
         <div className='flex flex-col items-center content-between mx-4'>
+            <img ref={picture} src = {slika1} alt="slika1" className='w-[850px] h-[400px] mb-0 rounded transition duration-300' /> 
 
-            <img ref={picture} src = {slika1} alt="slika1" className='w-full h-full mb-0 rounded transition duration-300' /> 
-
-            <table className='mainTable table-auto w-full text-center mb-6  font-bold '>
-                <tbody>
-                    <tr>
-                        <td onClick={handleClick} 
-                        className={picOne ? 'bg-[#8c8c8d]  transition duration-300 ' : 'hover:bg-[#8c8c8da1] bg-[#DDDCE4] transition duration-300 border border-b-gray-600 border-x-gray-600 '}
-                        >
-                            1
-                        </td>
-
-                        <td onClick={handleClickTwo} 
-                        className={!picOne ? 'bg-[#8c8c8d]  transition duration-300 ' : 'hover:bg-[#8c8c8da1] bg-[#DDDCE4] transition duration-300 border border-b-gray-600 border-x-gray-600'}
-                        >
-                            2
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
-      </div>  
+            <div className='flex  justify-between items-center w-full h-full '>
+                <div onClick={handleClick}   className={picOne ? 'slideButton  bg-teal-600 activePic' : 'slideButton  bg-teal-600'} >1</div>
+                <div onClick={handleClickTwo} className={picTwo ? 'slideButton  bg-slate-500 activePic' : 'slideButton  bg-slate-500'}>2</div>
+                <div onClick={handleClickThree} className={picThree ? 'slideButton  bg-teal-600 activePic' : 'slideButton  bg-teal-600'}>3</div>
+                <div onClick={handleClickFour} className={picFour ? 'slideButton  bg-slate-500 activePic' : 'slideButton  bg-slate-500'}>4</div>
+            </div>
+        </div>  
     </div>
   )
 }

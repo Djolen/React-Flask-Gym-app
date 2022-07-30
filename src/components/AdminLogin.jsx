@@ -16,9 +16,12 @@ const AdminLogin = () => {
 
     const [user, setUser] = useState({});
 
+    const [isLoggedIn, setIsLoggedIn] = useState(false)
+
     useEffect(() => {
         onAuthStateChanged(auth, (currentUser) => {
             setUser(currentUser);
+            setIsLoggedIn(true)
         });
     
     }, [])
@@ -40,6 +43,7 @@ const AdminLogin = () => {
 
     const handleLogout = async () =>{
         await signOut(auth)
+        setIsLoggedIn(false)
     }
 
     return (
@@ -62,7 +66,7 @@ const AdminLogin = () => {
             <>
                 <div className='flex flex-col justify-center items-center my-6' >
                     <p className='text-md font-bold'> Logged in as: {user.email} </p>
-                    <OrdersView logoutFunction = {handleLogout}/>
+                    <OrdersView logoutFunction = {handleLogout} loginCheck={isLoggedIn}/>
                 </div>
             </>
         }

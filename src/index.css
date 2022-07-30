@@ -48,27 +48,6 @@
   font-family: 'Nunito', sans-serif;
 }
 
-/* CUSTOM TABLE STYLES */
-
-/* STACK TABLE ON SMALL SCREENS */
-
-@media only screen and (max-width: 768px) {
-  .mainTable td{
-    display:block;
-  }
-
-}
-
-.mainTable td:first-child{
-  border-bottom-left-radius: 4px;
-}
-
-.mainTable td:last-child{
-  border-bottom-right-radius: 4px;
-}
-
-
-
 /* FOOTER */
 
 footer{
@@ -178,4 +157,28 @@ footer h1{
 
 .loginForm button:hover{
   opacity: 80%;
+}
+
+
+/* SLIDE BUTTONS */ 
+
+.slideButton:hover{
+  opacity:80%;
+  cursor: pointer;
+}
+
+.slideButton{
+  font-family: 'Nunito', sans-serif;
+  font-weight: bold;
+  display: flex; 
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 12px;
+  margin-top: 12px;
+  padding: 12px;
+  width: 20%;
+}
+
+.activePic{
+  border: 1px solid white;
 }
