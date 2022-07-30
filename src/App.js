@@ -8,7 +8,7 @@ import OrdersView from "./components/OrdersView";
 import OptionSection from "./components/OptionSection";
 
 
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { BrowserRouter as HashRouter, Routes, Route } from "react-router-dom";
 import AdminLogin from "./components/AdminLogin";
 
 
@@ -17,7 +17,7 @@ import AdminLogin from "./components/AdminLogin";
 
 function App() {
   return (
-    <Router>
+    <HashRouter>
       <Navbar/>
       <Routes>
         <Route path="/" element={<> <MainCard/> <OptionSection/> <Banner/> </>} />
@@ -27,7 +27,7 @@ function App() {
         <Route path="/VIEWORDERS" element={ <OrdersView/> } />
       </Routes>
       <Footer/>
-    </Router>
+    </HashRouter>
   );
 }
 
